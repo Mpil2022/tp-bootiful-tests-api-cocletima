@@ -25,4 +25,4 @@ jobs:
       - name: Run Tests
         run: mvn test
       - name: run docker command on VM
-        run: docker run -v $(pwd)/test:/etc/newman -t postman/newman:latest run "resources/newman_tests.json" --reporters="cli"
+        run: docker run -v $(pwd)/test:/etc/newman -t postman/newman:latest run "./resources/newman_tests.json" --reporters="cli"
