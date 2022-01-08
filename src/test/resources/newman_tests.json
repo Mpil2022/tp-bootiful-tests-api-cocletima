@@ -1,1 +1,110 @@
-{"info":{"_postman_id":"dcf24430-5b45-406a-a4af-344cf60de815","name":"testNewman","schema":"https://schema.getpostman.com/json/collection/v2.0.0/collection.json"},"item":[{"name":"http://localhost:8080/adder/current","event":[{"listen":"test","script":{"type":"text/javascript","exec":["pm.test(\"Status code is 200\", function() {\r","    pm.response.to.have.status(200);\r","})\r","pm.test(\"Body is correct\", function () {\r","    pm.response.to.have.body(\"0\");\r","});"]}}],"id":"1e1bee52-7387-4889-bb11-a85b57a6e5eb","protocolProfileBehavior":{"disableBodyPruning":true},"request":{"method":"GET","header":[],"body":{"mode":"raw","raw":"","options":{"raw":{"language":"json"}}},"url":"http://localhost:8080/adder/current"},"response":[]},{"name":"Post 4","event":[{"listen":"test","script":{"type":"text/javascript","exec":["pm.test(\"Status code is 200\", function () {\r","    pm.response.to.have.status(200);\r","});\r","pm.test(\"Successful POST request\", function () {\r","    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r","});\r","pm.test(\"Body is correct\", function () {\r","    pm.response.to.have.body(\"4\");\r","});"]}}],"id":"80a3921d-0504-4342-91dd-07cda058c55a","request":{"method":"POST","header":[],"url":{"raw":"http://localhost:8080/adder/?num=4","protocol":"http","host":["localhost"],"port":"8080","path":["adder",""],"query":[{"key":"num","value":"4"}]}},"response":[]},{"name":"Get expect 4","id":"7e50c209-6ee0-4b5e-af36-3d229d2909a8","request":{"method":"GET","header":[],"url":null},"response":[]}]}
+{
+  "info": {
+    "_postman_id": "dcf24430-5b45-406a-a4af-344cf60de815",
+    "name": "testNewman",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [{
+    "name": "Get expect 0",
+    "event": [{
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Status code is 200\", function() {\r",
+          "    pm.response.to.have.status(200);\r",
+          "})\r",
+          "pm.test(\"Body is correct\", function () {\r",
+          "    pm.response.to.have.body(\"0\");\r",
+          "});"
+        ]
+      }
+    }],
+    "id": "1e1bee52-7387-4889-bb11-a85b57a6e5eb",
+    "protocolProfileBehavior": {
+      "disableBodyPruning": true
+    },
+    "request": {
+      "method": "GET",
+      "header": [],
+      "body": {
+        "mode": "raw",
+        "raw": "",
+        "options": {
+          "raw": {
+            "language": "json"
+          }
+        }
+      },
+      "url": "http://localhost:8080/adder/current"
+    },
+    "response": []
+  },
+    {
+      "name": "Post 4",
+      "event": [{
+        "listen": "test",
+        "script": {
+          "type": "text/javascript",
+          "exec": [
+            "pm.test(\"Status code is 200\", function () {\r",
+            "    pm.response.to.have.status(200);\r",
+            "});\r",
+            "pm.test(\"Successful POST request\", function () {\r",
+            "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+            "});\r",
+            "pm.test(\"Body is correct\", function () {\r",
+            "    pm.response.to.have.body(\"4\");\r",
+            "});"
+          ]
+        }
+      }],
+      "id": "80a3921d-0504-4342-91dd-07cda058c55a",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/adder/?num=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "adder",
+            ""
+          ],
+          "query": [{
+            "key": "num",
+            "value": "4"
+          }]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get expect 4",
+      "event": [{
+        "listen": "test",
+        "script": {
+          "type": "text/javascript",
+          "exec": [
+            "pm.test(\"Status code is 200\", function() {\r",
+            "    pm.response.to.have.status(200);\r",
+            "})\r",
+            "pm.test(\"Body is correct\", function () {\r",
+            "    pm.response.to.have.body(\"4\");\r",
+            "});"
+          ]
+        }
+      }],
+      "id": "7e50c209-6ee0-4b5e-af36-3d229d2909a8",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/adder/current"
+      },
+      "response": []
+    }
+  ]
+}
