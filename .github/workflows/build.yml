@@ -22,5 +22,5 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Run Tests
-        run: mvn test
+      - name: run docker command on VM
+        run: docker run -v $(pwd)/test:/etc/newman -t postman/newman:latest run "newman_tests.json" --reporters="cli"
