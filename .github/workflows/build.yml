@@ -1,5 +1,5 @@
 #Workflow name
-name: Test Pipeline
+name: Build pipeline
 on:
   workflow_dispatch:
   push:
