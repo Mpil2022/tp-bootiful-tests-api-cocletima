@@ -24,6 +24,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run Tests
         run: mvn test
-      # TODO: Dockerise the springboot app to run it and support the newman tests
-      - name: run docker command on VM
-        run: docker run -v $(pwd)/src/test:/etc/newman -t postman/newman:latest run "resources/newman_tests.json" --reporters="cli"
+      - name: Run SrpingBoot Application and test it with newman (postman)
+        run: | 
+          mvn spring-boot:run &
+          sleep 5
+          docker run -v $(pwd)/src/test:/etc/newman -t postman/newman:latest run "resources/newman_tests.json" --reporters="cli"
+          kill -9 `lsof -i:8080 -t`
