@@ -6,9 +6,6 @@ on:
 
 jobs:
   tests:
-    services:
-      service1:
-        image: mvn spring-boot:run
     name: Tests
     runs-on: ubuntu-latest
     steps:
