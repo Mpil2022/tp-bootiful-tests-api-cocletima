@@ -3,8 +3,6 @@ name: Test Pipeline
 on:
   workflow_dispatch:
   push:
-    branches:
-      - "*"
 jobs:
   tests:
     name: Tests
