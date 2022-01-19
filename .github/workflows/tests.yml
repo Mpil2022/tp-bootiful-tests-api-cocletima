@@ -6,6 +6,9 @@ on:
 
 jobs:
   tests:
+    services:
+      service1:
+        image: mvn spring-boot:run
     name: Tests
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +28,5 @@ jobs:
         run: mvn test
       - name: Run SrpingBoot Application and test it with newman (postman)
         run: | 
-          mvn spring-boot:run &
-          sleep 5
           docker run -v $(pwd)/src/test:/etc/newman -t postman/newman:latest run "resources/newman_tests.json" --reporters="cli"
           kill -9 `lsof -i:8080 -t`
