@@ -23,7 +23,14 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run Tests
         run: mvn test
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
+        with:
+          collection: newman_tests.json
+          environment: newman_tests.json
       - name: Run SrpingBoot Application and test it with newman (postman)
         run: | 
+          mvn spring-boot:run &
+          sleep 5
           docker run -v $(pwd)/src/test:/etc/newman -t postman/newman:latest run "resources/newman_tests.json" --reporters="cli"
           kill -9 `lsof -i:8080 -t`

@@ -36,7 +36,7 @@
           }
         }
       },
-      "url": "http://localhost:8081/adder/current"
+      "url": "http://localhost:8080/adder/current"
     },
     "response": []
   },
@@ -64,12 +64,12 @@
         "method": "POST",
         "header": [],
         "url": {
-          "raw": "http://localhost:8081/adder/?num=4",
+          "raw": "http://localhost:8080/adder/?num=4",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "8081",
+          "port": "8080",
           "path": [
             "adder",
             ""
@@ -102,7 +102,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": "http://localhost:8081/adder/current"
+        "url": "http://localhost:8080/adder/current"
       },
       "response": []
     }
