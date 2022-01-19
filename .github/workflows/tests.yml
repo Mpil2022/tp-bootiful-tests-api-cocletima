@@ -3,8 +3,7 @@ name: Test Pipeline
 on:
   workflow_dispatch:
   push:
-    branches:
-      - choneT
+
 jobs:
   tests:
     name: Tests
