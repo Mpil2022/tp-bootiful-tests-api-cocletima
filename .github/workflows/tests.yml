@@ -25,9 +25,7 @@ jobs:
         run: mvn test
       - uses: actions/checkout@master
       - name: Run SrpingBoot Application and test it with newman (postman)
+        uses: actions/tp-bootful-tests-api-cocletima@v1
         run: | 
-          sudo docker build -t spring-image . &
-          sudo docker run -p 8080:8080 --name spring-app spring-image &
-          sleep 100
           docker run -v $(pwd)/src/test:/etc/newman -t postman/newman:latest run "resources/newman_tests.json" --reporters="cli"
           docker kill $(docker ps -q)
