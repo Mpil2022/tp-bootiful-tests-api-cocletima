@@ -28,6 +28,6 @@ jobs:
         run: | 
           sudo docker build -t spring-image . &
           sudo docker run -p 8080:8080 --name spring-app spring-image &
-          sleep 5
+          sleep 100
           docker run -v $(pwd)/src/test:/etc/newman -t postman/newman:latest run "resources/newman_tests.json" --reporters="cli"
           docker kill $(docker ps -q)
