@@ -36,7 +36,7 @@
           }
         }
       },
-      "url": "http://localhost:8081/adder/current"
+      "url": "http://spring-app:8081/adder/current"
     },
     "response": []
   },
@@ -64,10 +64,10 @@
         "method": "POST",
         "header": [],
         "url": {
-          "raw": "http://localhost:8081/adder/?num=4",
+          "raw": "http://spring-app:8081/adder/?num=4",
           "protocol": "http",
           "host": [
-            "localhost"
+            "spring-app"
           ],
           "port": "8081",
           "path": [
@@ -102,7 +102,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": "http://localhost:8081/adder/current"
+        "url": "http://spring-app:8081/adder/current"
       },
       "response": []
     }
