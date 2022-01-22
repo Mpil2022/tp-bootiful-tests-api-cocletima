@@ -1,9 +1,10 @@
 # syntax=docker/dockerfile:1
-FROM ubuntu:18.04
+FROM ubuntu:latest
 COPY . .
 RUN echo "update"
 RUN apt-get update
 RUN echo "maven"
 RUN apt-get install maven -y
-RUN echo "run"
+RUN echo "tests"
+RUN mvn test
 CMD mvn spring-boot:run
