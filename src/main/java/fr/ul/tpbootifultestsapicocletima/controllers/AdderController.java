@@ -17,11 +17,13 @@ public class AdderController {
         this.adderService = adderService;
     }
 
+    @CrossOrigin
     @GetMapping("/current")
     public int currentNum() {
         return adderService.getNum();
     }
 
+    @CrossOrigin
     @PostMapping
     public int add(@RequestParam int num) {
         return adderService.accumulate(num);
